@@ -14,13 +14,17 @@ body {
 }
 
 .header {
-  height: 0;
-  width: 100vw;
   display: flex;
+  width: 100vw;
+  text-align: center;
+  background: #1c1f2b;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   justify-content: center;
 }
-
-
 
 .main {
   display: flex;
@@ -35,7 +39,6 @@ body {
 .card {
   margin: 0;
   padding: 2em;
-
   background-color: #1c1f2b;
   text-align: center;
   border-radius: 10px;
@@ -103,7 +106,7 @@ a {
   -webkit-transition: all 200ms ease-in-out;
   -webkit-transform: scale(1.1);
   -ms-transition: all 200ms ease-in-out;
-  -ms-transform: scale(1.1);   
+  -ms-transform: scale(1.1);
   -moz-transition: all 200ms ease-in-out;
   -moz-transform: scale(1.1);
   transition: all 1s ease-in-out;
@@ -111,22 +114,23 @@ a {
 }
 
 .name {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 1.5em;
   justify-content: center;
 }
 
-.linkedin, .instagram {
+.linkedin,
+.instagram {
   color: #007bff;
   display: flex;
   font-size: 1em;
   justify-content: center;
-  margin-top: 22px;
+  margin-top: 15px;
   margin-left: 100px;
   transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-.linkedin:hover { /* Nova cor quando o mouse está sobre o link */
+.linkedin:hover {
   font-size: 20px;
 }
 
@@ -134,7 +138,34 @@ span:hover {
   color: #006aff;
 }
 
-.instagram:hover { /* Nova cor quando o mouse está sobre o link */
+.instagram:hover {
   font-size: 20px;
 }
 
+@media screen and (max-width: 480px) {
+  .main {
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px; 
+    gap: 20px; 
+  }
+
+  .card {
+    width: 90%; 
+    padding: 1em; 
+    text-align: center; 
+  }
+
+  .name {
+    font-size: 1em; 
+  }
+
+  .linkedin, .instagram {
+    font-size: 1em; 
+    margin-left: 10px;
+  }
+
+  a {
+    font-size: 18px; 
+  }
+}
